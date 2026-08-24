@@ -13,4 +13,8 @@ def get_provider(name: str):
         from .ytmusic import YTMusicProvider
 
         return YTMusicProvider()
+    if name == "offline":
+        from .offline import OfflineProvider
+
+        return OfflineProvider()
     raise ValueError(f"Unknown provider: {name}")

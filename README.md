@@ -106,8 +106,34 @@ and prints the report without touching your account.
 
 New playlists are created **private** on both services.
 
+## Trying it without credentials
+
+Spotify requires a registered developer app before you can read anything,
+which is a hard stop if you can't create one. There's an offline fixture
+provider so you can still exercise the whole pipeline:
+
+```bash
+python -m playlist_bridge transfer "offline:spotify_demo" --to ytmusic --dry-run
+```
+
+That reads a canned playlist with Spotify-shaped metadata (remaster tags,
+multi-artist tracks, accented titles), runs a real search against YouTube
+Music, and prints the full match report — without any credentials.
+
+It's a development and testing aid, not a way to move real playlists.
+
 ## Notes
 
 - `ytmusicapi` is unofficial and can break if Google changes its internals.
 - Playlists you don't own can be read but not modified.
 - Auth tokens are cached in `.cache/` and are gitignored.
+
+## Tests
+
+```bash
+python -m unittest discover -s tests
+```
+
+Stdlib `unittest`, no extra dependencies. The suite covers matching
+heuristics, link parsing in both directions, and a full transfer through
+the offline provider.

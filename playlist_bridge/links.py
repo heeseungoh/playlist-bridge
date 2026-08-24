@@ -7,6 +7,7 @@ from urllib.parse import parse_qs, urlparse
 
 SPOTIFY = "spotify"
 YTMUSIC = "ytmusic"
+OFFLINE = "offline"
 
 
 class LinkError(ValueError):
@@ -26,6 +27,10 @@ def parse_link(link: str) -> tuple[str, str]:
     m = _SPOTIFY_URI.match(link)
     if m:
         return SPOTIFY, m.group(1)
+
+    # Fixture source for testing without credentials, e.g. offline:demo
+    if link.startswith("offline:"):
+        return OFFLINE, link.split(":", 1)[1] or "spotify_demo"
 
     parsed = urlparse(link if "://" in link else f"https://{link}")
     host = parsed.netloc.lower().removeprefix("www.")
@@ -52,4 +57,7 @@ def parse_link(link: str) -> tuple[str, str]:
 
 
 def other_provider(provider: str) -> str:
+    """Default destination for a source. Offline has no natural pair."""
+    if provider == OFFLINE:
+        return YTMUSIC
     return YTMUSIC if provider == SPOTIFY else SPOTIFY

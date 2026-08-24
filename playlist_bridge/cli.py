@@ -128,7 +128,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     t = sub.add_parser("transfer", help="Transfer a playlist from a pasted link.")
     t.add_argument("link", help="Spotify or YouTube Music playlist URL")
-    t.add_argument("--to", choices=["spotify", "ytmusic"],
+    t.add_argument("--to", choices=["spotify", "ytmusic", "offline"],
                    help="Destination service (default: the other one)")
     t.add_argument("--name", help="Name for the new playlist (default: source name)")
     t.add_argument("--threshold", type=float, default=0.62,

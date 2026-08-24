@@ -1,0 +1,77 @@
+{
+  "id": "demo",
+  "name": "Spotify Demo Playlist",
+  "description": "Fixture playlist with Spotify-style track metadata, used to exercise the transfer engine without credentials.",
+  "tracks": [
+    {
+      "id": "0VjIjW4GlUZAMYd2vXMi3b",
+      "title": "Blinding Lights",
+      "artists": ["The Weeknd"],
+      "album": "After Hours",
+      "duration_ms": 200040
+    },
+    {
+      "id": "3Vo4wInECJQuz9BIBMOu8i",
+      "title": "Bohemian Rhapsody - Remastered 2011",
+      "artists": ["Queen"],
+      "album": "A Night At The Opera",
+      "duration_ms": 354320
+    },
+    {
+      "id": "6gBFPUFcJLzWGx4lenP6h2",
+      "title": "goosebumps",
+      "artists": ["Travis Scott", "Kendrick Lamar"],
+      "album": "Birds In The Trap Sing McKnight",
+      "duration_ms": 243836
+    },
+    {
+      "id": "39LLxExYz6ewLAcYrzQQyP",
+      "title": "Levitating",
+      "artists": ["Dua Lipa"],
+      "album": "Future Nostalgia",
+      "duration_ms": 203064
+    },
+    {
+      "id": "5CQ30WqJwcep0pYcV4AMNc",
+      "title": "Stairway to Heaven - Remaster",
+      "artists": ["Led Zeppelin"],
+      "album": "Led Zeppelin IV",
+      "duration_ms": 482830
+    },
+    {
+      "id": "1BxfuPKGuaTgP7aM0Bbdwr",
+      "title": "Cruel Summer",
+      "artists": ["Taylor Swift"],
+      "album": "Lover",
+      "duration_ms": 178426
+    },
+    {
+      "id": "4Dvkj6JhhA12EX05fT7y2e",
+      "title": "As It Was",
+      "artists": ["Harry Styles"],
+      "album": "Harry's House",
+      "duration_ms": 167303
+    },
+    {
+      "id": "0yLdNVWF3Srea0uzk55zFn",
+      "title": "Flowers",
+      "artists": ["Miley Cyrus"],
+      "album": "Endless Summer Vacation",
+      "duration_ms": 200455
+    },
+    {
+      "id": "7qiZfU4dY1lWllzX7mPBI3",
+      "title": "Shape of You",
+      "artists": ["Ed Sheeran"],
+      "album": "\u00f7 (Divide)",
+      "duration_ms": 233712
+    },
+    {
+      "id": "5PjdY0CKGZdEuoNab3yDmX",
+      "title": "Situations",
+      "artists": ["Escape"],
+      "album": "Unreleased Demo 1987",
+      "duration_ms": 214000
+    }
+  ]
+}
