@@ -1,12 +1,14 @@
 # playlist-bridge
 
-Transfer playlists between **YouTube Music** and **Spotify** by pasting a link.
+As a YouTube Music user with genuinely excellent taste, I couldn't share my
+playlists with any of my friends on Spotify. So I built this: a command line
+tool that moves a playlist between the two services from a pasted link.
 
-Paste a playlist URL from either service and it recreates that playlist on the
+Paste a playlist URL from either service and it rebuilds that playlist on the
 other one, matching each track and telling you exactly what it couldn't find.
 
 ```bash
-python -m playlist_bridge transfer "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+python -m playlist_bridge transfer "https://music.youtube.com/playlist?list=PLi8xM09IGQqU"
 ```
 
 Direction is inferred from the link, so the same command works both ways.
