@@ -1,8 +1,8 @@
 # playlist-bridge
 
-As a YouTube Music user with genuinely excellent taste, I couldn't share my
-playlists with any of my friends on Spotify. So I built this: a command line
-tool that moves a playlist between the two services from a pasted link.
+As a YouTube Music user with a beautiful music taste, I couldn't share my
+playlists with my friends on Spotify, so I built this tool to move a playlist
+between YT Music and Spotify to share my love.
 
 Paste a playlist URL from either service and it rebuilds that playlist on the
 other one, matching each track and telling you exactly what it couldn't find.
