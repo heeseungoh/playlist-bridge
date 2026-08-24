@@ -1,12 +1,14 @@
 # playlist-bridge
 
-Transfer playlists between **YouTube Music** and **Spotify** by pasting a link.
+As a YouTube Music user with a beautiful music taste, I couldn't share my
+playlists with my friends on Spotify, so I built this tool to move a playlist
+between YT Music and Spotify to share my love.
 
-Paste a playlist URL from either service and it recreates that playlist on the
+Paste a playlist URL from either service and it rebuilds that playlist on the
 other one, matching each track and telling you exactly what it couldn't find.
 
 ```bash
-python -m playlist_bridge transfer "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+python -m playlist_bridge transfer "https://music.youtube.com/playlist?list=PLi8xM09IGQqU"
 ```
 
 Direction is inferred from the link, so the same command works both ways.
@@ -106,8 +108,34 @@ and prints the report without touching your account.
 
 New playlists are created **private** on both services.
 
+## Trying it without credentials
+
+Spotify requires a registered developer app before you can read anything,
+which is a hard stop if you can't create one. There's an offline fixture
+provider so you can still exercise the whole pipeline:
+
+```bash
+python -m playlist_bridge transfer "offline:spotify_demo" --to ytmusic --dry-run
+```
+
+That reads a canned playlist with Spotify-shaped metadata (remaster tags,
+multi-artist tracks, accented titles), runs a real search against YouTube
+Music, and prints the full match report — without any credentials.
+
+It's a development and testing aid, not a way to move real playlists.
+
 ## Notes
 
 - `ytmusicapi` is unofficial and can break if Google changes its internals.
 - Playlists you don't own can be read but not modified.
 - Auth tokens are cached in `.cache/` and are gitignored.
+
+## Tests
+
+```bash
+python -m unittest discover -s tests
+```
+
+Stdlib `unittest`, no extra dependencies. The suite covers matching
+heuristics, link parsing in both directions, and a full transfer through
+the offline provider.
